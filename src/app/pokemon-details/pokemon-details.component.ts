@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Pokemon } from '../shared/models/pokemon';
+import { PokemonService } from '../shared/services/pokemon.service';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -9,21 +10,19 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 export class PokemonDetailsComponent {
 
-  pokeChoice! : FormGroup;
+  monPoke! : Pokemon;
 
-  constructor(
-    private _nomFormBuilder : FormBuilder,
-  ){}
+  constructor (
+    private _nomPokeService : PokemonService,
+  ) {}
 
-  NgOnInit() {
-    this.pokeChoice = this._nomFormBuilder.group({
-      nom : [''],
-      id : [0],
+  ngOnInit () {
+    this._nomPokeService.getById(0).subscribe({
+
     })
   }
 
-  onSubmit() {
-    console.log('je submit');
-    
-  }
+
+
+
 }
