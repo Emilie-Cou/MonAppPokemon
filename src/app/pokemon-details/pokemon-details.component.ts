@@ -23,6 +23,7 @@ export class PokemonDetailsComponent {
   }
 
   onSubmit() {
-
+    console.log('je submit');
+    
   }
 }

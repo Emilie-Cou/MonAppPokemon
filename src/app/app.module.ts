@@ -6,17 +6,22 @@ import { AppComponent } from './app.component';
 import { ConsigneComponent } from './consigne/consigne.component';
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConsigneComponent,
     PokemonDetailsComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
