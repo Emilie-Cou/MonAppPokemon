@@ -1,0 +1,13 @@
+<h2>A la recherche d'un Pokémon</h2>
+
+<p>Pour trouver un Pokémon, tu dois connaitre soit son nom (en anglais), soit son id.</p>
+<form [formGroup]="pokeChoice" (ngSubmit)="onSubmit()">
+    <p>Ici, cherche le Pokémon par son nom : </p>
+    <input type="text" formControlName="nom" placeholder="Nom">
+
+    <p>Ou ici, par son id :  </p>
+    <input type="text" formControlName="id" placeholder="Id">
+
+    <button type="submit">Rechercher</button>
+</form>
+

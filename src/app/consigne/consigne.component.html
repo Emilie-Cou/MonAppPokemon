@@ -1,0 +1,66 @@
+<h2>Consignes de l'exercice</h2>
+
+<h3>Affichage des détails d'un Pokémon avec Angular</h3>
+
+<h4>Objectif :</h4>
+<p>
+    Cet exercice, vous allez créer une application Angular qui affiche les détails d'un Pokémon en utilisant l'API PokeAPI V2. Vous allez travailler avec des composants, des services, des requêtes HTTP, et la gestion des données dans une application Angular.
+</p>
+
+<h4>Description :</h4>
+<p>
+    Votre tâche consiste à créer une application Angular qui permet aux utilisateurs de rechercher un Pokémon par son nom et d'afficher ses détails, tels que son nom, son type, ses statistiques, et une image.
+</p>
+
+<h5>1. Mise en place du projet :</h5>
+<p>
+    o Créez un nouveau projet Angular en utilisant la commande ng new mon-app-pokemon.
+    o Naviguez dans le dossier du projet en utilisant cd mon-app-pokemon.
+</p>
+
+<h5>2. Créez un service :</h5>
+<p>
+    o Créez un service Angular nommé PokemonService en utilisant la commande ng generate service pokemon.
+</p>
+
+<h5>3. Définissez une interface :</h5>
+<p>
+    o Créez une interface TypeScript nommée Pokemon pour représenter la structure des données d'un Pokémon, y compris son nom, son type, ses statistiques, etc.
+</p>
+
+<h5>4. Créez un composant :</h5>
+<p>
+    o Créez un composant nommé PokemonDetails en utilisant la commande ng generate component pokemon-details.
+</p>
+
+<h5>5. Mettez en place le formulaire de recherche :</h5>
+<p>
+    o Dans le composant PokemonDetails, créez un formulaire permettant aux utilisateurs de saisir le nom d'un Pokémon à rechercher.
+</p>
+
+<h5>6. Utilisez le service pour récupérer les données :</h5>
+<p>
+    o Dans le service PokemonService, utilisez le module HttpClient pour envoyer une requête GET à l'API PokeAPI V2 pour récupérer les détails du Pokémon en fonction du nom saisi dans le formulaire.
+</p>
+
+<h5>7. Affichez les détails du Pokémon :</h5>
+<p>
+    o Affichez les détails du Pokémon dans le composant PokemonDetails une fois que les données ont été récupérées avec succès depuis l'API.
+    o Affichez le nom du Pokémon, son type, ses statistiques, et une image.
+</p>
+
+<h5>8. Gestion des erreurs :</h5>
+<p>
+    o Gérez les erreurs potentielles liées à la recherche du Pokémon, par exemple, si le Pokémon n'existe pas.
+</p>
+
+<h5>9. Stylisez l'application :</h5>
+<p>
+    o Utilisez CSS pour styliser l'application et rendre son interface utilisateur agréable.
+</p>
+
+<h5>10. Testez votre application :</h5>
+<p>
+    o Testez l'application en saisissant le nom d'un Pokémon existant pour vérifier si les détails sont correctement affichés.
+    o Testez également la gestion des erreurs en saisissant le nom d'un Pokémon inexistant.
+</p>
