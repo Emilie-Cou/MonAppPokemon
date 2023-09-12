@@ -1,13 +1,13 @@
 <h1>Voici ton pokémon</h1>
 
 <div>
-    <p>Nom :  </p>
-    <p>Id :  </p>
-    <p>Type :  </p>
-    <p>Numéro d'ordre :  </p>
-    <p>Taille :  </p>
-    <p>Poids :  </p>
-    <p>Expérience de base :  </p>
-    <p>Perso par défaut :  </p>
-    <p>Statisqtiques :  </p>
+    <p>Nom : {{monPoke.name}} </p>
+    <p>Id : {{monPoke.id}} </p>
+    <p>Type : {{monPoke.type}} </p>
+    <p>Numéro d'ordre : {{monPoke.order}} </p>
+    <p>Taille : {{monPoke.height}} </p>
+    <p>Poids : {{monPoke.weight}} </p>
+    <p>Expérience de base : {{monPoke.base_experience}} </p>
+    <p>Perso par défaut : {{monPoke.is_default ? 'Oui' : 'Non'}} </p>
+    <p>Statistiques : {{monPoke.statistique}} </p>
 </div>
