@@ -8,4 +8,5 @@ export interface Pokemon {
     base_experience : number,
     is_default : boolean,
     statistique : string,
+    stripe : string,
 }

@@ -12,6 +12,9 @@ export class PokemonService {
 
   constructor(private _nomHttpClient : HttpClient) { }
 
+  formIdValid! : number;
+  formNomValid! : string;
+
   getById (idPoke : number) : Observable<any> {
     return this._nomHttpClient.get<any>(this.urlPoke + idPoke)
   }

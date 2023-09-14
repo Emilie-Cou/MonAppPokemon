@@ -17,22 +17,42 @@ export class PokemonDetailsComponent {
   ) {}
 
   ngOnInit () {
-    this._nomPokeService.getById(25).subscribe({
-      next : (data) => {
-        this.monPoke = {
-          name : data.name,
-          id : data.id,
-          type : data.type,
-          order : data.order,
-          height : data.height,
-          weight : data.weight,
-          base_experience : data.base_experience,
-          is_default : data.is_default,
-          statistique : data.statistique,
+    if (this._nomPokeService.formIdValid) {
+      this._nomPokeService.getById(this._nomPokeService.formIdValid).subscribe({
+        next : (data) => {
+          this.monPoke = {
+            name : data.name,
+            id : data.id,
+            type : data.type,
+            order : data.order,
+            height : data.height,
+            weight : data.weight,
+            base_experience : data.base_experience,
+            is_default : data.is_default,
+            statistique : data.statistique,
+            stripe : data.sprites.front_default,
+          }
         }
-        console.log(this.monPoke);
-      }
-    })
+      })
+    } 
+    else if (this._nomPokeService.formNomValid) {
+      this._nomPokeService.getByNom(this._nomPokeService.formNomValid).subscribe({
+        next : (data) => {
+          this.monPoke = {
+            name : data.name,
+            id : data.id,
+            type : data.type,
+            order : data.order,
+            height : data.height,
+            weight : data.weight,
+            base_experience : data.base_experience,
+            is_default : data.is_default,
+            statistique : data.statistique,
+            stripe : data.sprites.front_default,
+          }
+        }
+      })
+    }
   }
 
 
