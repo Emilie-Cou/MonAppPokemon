@@ -23,13 +23,13 @@ export class PokemonDetailsComponent {
           this.monPoke = {
             name : data.name,
             id : data.id,
-            type : data.type,
+            type : data.types[0].type.name,
             order : data.order,
             height : data.height,
             weight : data.weight,
             base_experience : data.base_experience,
             is_default : data.is_default,
-            statistique : data.statistique,
+            statistique : data.stats[1].stat.name + ': ' + data.stats[1].base_stat,
             stripe : data.sprites.front_default,
           }
         }
@@ -41,13 +41,13 @@ export class PokemonDetailsComponent {
           this.monPoke = {
             name : data.name,
             id : data.id,
-            type : data.type,
+            type : data.types[0].type.name,
             order : data.order,
             height : data.height,
             weight : data.weight,
             base_experience : data.base_experience,
             is_default : data.is_default,
-            statistique : data.statistique,
+            statistique : data.stats[1].stat.name + ': ' + data.stats[1].base_stat,
             stripe : data.sprites.front_default,
           }
         }

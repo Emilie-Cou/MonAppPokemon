@@ -42,7 +42,7 @@ export class PokemonFormComponent {
       this._nomPokeService.formNomValid = formNom;
     } 
     else {
-      console.log('Il y a un problème dans le submit');
+      alert('Merci d\'introduire un nom ou un numéro d\'id');
     }
     
     this._nomRouter.navigate(['pokeDetails']);
