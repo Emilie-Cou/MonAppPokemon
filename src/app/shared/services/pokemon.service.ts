@@ -23,4 +23,8 @@ export class PokemonService {
   getByNom (nomPoke : string) : Observable<any> {
     return this._nomHttpClient.get<any>(this.urlPoke + nomPoke)
   }
+
+  getSpeciesById ( idPoke : number) : Observable<any> {
+    return this._nomHttpClient.get<any>(this.urlPokeSpecies + idPoke)
+  }
 }

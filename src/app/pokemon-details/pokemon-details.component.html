@@ -1,6 +1,6 @@
 <h1>Voici ton pokémon</h1>
 
-<div>
+<div *ngIf="monPoke; else elseBlock">
     <p>Nom : {{monPoke.name}} </p>
     <p>Id : {{monPoke.id}} </p>
     <p>Type : {{monPoke.type}} </p>
@@ -9,6 +9,16 @@
     <p>Poids : {{monPoke.weight}} </p>
     <p>Expérience de base : {{monPoke.base_experience}} </p>
     <p>Perso par défaut : {{monPoke.is_default ? 'Oui' : 'Non'}} </p>
-    <p>Statistiques : {{monPoke.statistique}} </p>
+    <p>Statistiques : </p>
+        <ul>
+            <li *ngFor="let stat of monPoke.statistique">{{ stat }}</li>
+        </ul>
     <img src={{monPoke.stripe}} alt={{monPoke.name}}>
 </div>
+
+<ng-template #elseBlock>
+    <h3>
+        Il y a une erreur!
+    </h3>
+    <p>Tu peux réessayer <button type="button" (click)="goToPokeChoice()"> ici ⇨ </button>
+</ng-template>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Pokemon } from '../shared/models/pokemon';
 import { PokemonService } from '../shared/services/pokemon.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -14,6 +15,7 @@ export class PokemonDetailsComponent {
 
   constructor (
     private _nomPokeService : PokemonService,
+    private _nomRouter : Router,
   ) {}
 
   ngOnInit () {
@@ -29,7 +31,9 @@ export class PokemonDetailsComponent {
             weight : data.weight,
             base_experience : data.base_experience,
             is_default : data.is_default,
-            statistique : data.stats[1].stat.name + ': ' + data.stats[1].base_stat,
+            statistique : data.stats.map((data: { stat: { name: string; }; base_stat: string; }) => 
+              data.stat.name + ': ' + data.base_stat
+            ),
             stripe : data.sprites.front_default,
           }
         }
@@ -47,7 +51,9 @@ export class PokemonDetailsComponent {
             weight : data.weight,
             base_experience : data.base_experience,
             is_default : data.is_default,
-            statistique : data.stats[1].stat.name + ': ' + data.stats[1].base_stat,
+            statistique : data.stats.map((data: { stat: { name: string; }; base_stat: string; }) => 
+              data.stat.name + ': ' + data.base_stat
+            ),
             stripe : data.sprites.front_default,
           }
         }
@@ -55,7 +61,7 @@ export class PokemonDetailsComponent {
     }
   }
 
-
-
-
+  goToPokeChoice() : void {
+    this._nomRouter.navigate(['pokeChoice']);
+  }
 }
