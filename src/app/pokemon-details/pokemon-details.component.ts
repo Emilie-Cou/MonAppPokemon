@@ -25,7 +25,9 @@ export class PokemonDetailsComponent {
           this.monPoke = {
             name : data.name,
             id : data.id,
-            type : data.types[0].type.name,
+            type : data.types.map((data: { type: { name: any; }; }) => 
+              data.type.name
+              ),
             order : data.order,
             height : data.height,
             weight : data.weight,
@@ -33,7 +35,7 @@ export class PokemonDetailsComponent {
             is_default : data.is_default,
             statistique : data.stats.map((data: { stat: { name: string; }; base_stat: string; }) => 
               data.stat.name + ': ' + data.base_stat
-            ),
+              ),
             stripe : data.sprites.front_default,
           }
         }
@@ -45,7 +47,9 @@ export class PokemonDetailsComponent {
           this.monPoke = {
             name : data.name,
             id : data.id,
-            type : data.types[0].type.name,
+            type : data.types.map((data: { type: { name: any; }; }) => 
+              data.type.name
+              ),
             order : data.order,
             height : data.height,
             weight : data.weight,
@@ -53,7 +57,7 @@ export class PokemonDetailsComponent {
             is_default : data.is_default,
             statistique : data.stats.map((data: { stat: { name: string; }; base_stat: string; }) => 
               data.stat.name + ': ' + data.base_stat
-            ),
+              ),
             stripe : data.sprites.front_default,
           }
         }

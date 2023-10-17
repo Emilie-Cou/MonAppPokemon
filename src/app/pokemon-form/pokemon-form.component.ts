@@ -20,7 +20,6 @@ export class PokemonFormComponent {
   ){}
 
   ngOnInit() {
-    console.log('je ngoninit');
     this.pokeChoice = this._nomFormBuilder.group({
       nom : ['', Validators.nullValidator],
       id : [null, Validators.nullValidator],
@@ -28,18 +27,16 @@ export class PokemonFormComponent {
   }
 
   submitPokeForm() : void {
-    console.log('je submit');
     const formPoke = this.pokeChoice.value;
-    console.log(formPoke);
 
-    if (formPoke.id !== null) {
-      const formId = formPoke.id;   
-      this._nomPokeService.formIdValid = formId;
-    } 
-    else 
-    if (formPoke.nom !== '') {
+    if (formPoke.nom !== '' && formPoke.id === null) {
       const formNom = formPoke.nom;
       this._nomPokeService.formNomValid = formNom;
+    } 
+    else 
+    if (formPoke.id !== null && formPoke.nom === '') {
+      const formId = formPoke.id;   
+      this._nomPokeService.formIdValid = formId;
     } 
     else {
       alert('Merci d\'introduire un nom ou un numéro d\'id');
